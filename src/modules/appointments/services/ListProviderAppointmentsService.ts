@@ -43,7 +43,6 @@ class ListProviderAppointmentsService {
         },
       );
 
-      console.log(`buscou do banco`);
       await this.cacheProvider.save(cacheKey, classToClass(appointments));
     } // sempre que for salvar no cache utilizando serialização e for necessário utilizar o classToClass, para que o formato seja respeitado e as definições feitas na entidade seja respeitada.
 

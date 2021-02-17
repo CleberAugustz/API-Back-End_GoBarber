@@ -14,7 +14,6 @@ class UsersRepository implements IUsersRepository {
 
   public async findById(id: string): Promise<User | undefined> {
     const user = await this.ormRepository.findOne(id);
-
     return user;
   }
 
@@ -52,7 +51,7 @@ class UsersRepository implements IUsersRepository {
   }
 
   public async save(user: User): Promise<User> {
-    return this.ormRepository.save(user);
+    return await this.ormRepository.save(user);
   }
 }
 

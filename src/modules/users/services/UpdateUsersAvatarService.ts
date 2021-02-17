@@ -27,15 +27,6 @@ class UpdateUserAvatarService {
       throw new AppError('Only authenticated users can change avatar.', 401);
     }
     if (user.avatar) {
-      // deletar avatar anterior
-      // const userAvatarFilePath = path.join(uploadConfig.directory, user.avatar);
-
-      // const userAvatarFileExists = await fs.promises.stat(userAvatarFilePath);
-
-      // if(userAvatarFileExists){
-      //     await fs.promises.unlink(userAvatarFilePath);
-      // }
-
       await this.storageProvider.deleteFile(user.avatar);
     }
 

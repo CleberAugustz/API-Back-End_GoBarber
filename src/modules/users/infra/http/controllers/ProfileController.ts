@@ -31,6 +31,7 @@ export default class ProfileController {
       old_password,
       password,
     });
+
     return response.json(classToClass(user));
   }
 }
